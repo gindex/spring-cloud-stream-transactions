@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-cloud-strem-transactions
+  main:
+    banner-mode: "off"
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cloud:
+    stream:
+      bindings:
+        function-in-0:
+          destination: consume
+          group: queue
+        function-out-0:
+          destination: produce
+    function:
+      definition: function
